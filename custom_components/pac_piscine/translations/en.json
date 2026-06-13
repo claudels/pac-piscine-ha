@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Pool Heat Pump (EW11)",
+        "description": "Address of the EW11 gateway connected to the heat pump RS485 bus (transparent / TCP server mode).",
+        "data": {
+          "host": "EW11 IP address",
+          "port": "TCP port"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the EW11 (check IP, port, and that the module is powered)."
+    },
+    "abort": {
+      "already_configured": "This heat pump is already configured."
+    }
+  }
+}

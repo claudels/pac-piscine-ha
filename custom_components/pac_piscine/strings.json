@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "PAC Piscine (EW11)",
+        "description": "Adresse de la passerelle EW11 branchée sur le bus RS485 de la PAC (mode transparent / TCP server).",
+        "data": {
+          "host": "Adresse IP de l'EW11",
+          "port": "Port TCP"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Connexion impossible à l'EW11 (vérifie l'IP, le port, et que le module est allumé)."
+    },
+    "abort": {
+      "already_configured": "Cette PAC est déjà configurée."
+    }
+  }
+}

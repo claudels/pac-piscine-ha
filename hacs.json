@@ -1,0 +1,5 @@
+{
+  "name": "PAC Piscine (EW11 / Modbus)",
+  "render_readme": true,
+  "homeassistant": "2024.1.0"
+}

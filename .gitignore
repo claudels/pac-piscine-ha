@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.bin
+*.log
+*.apk
+config.ini
+.DS_Store

@@ -1,0 +1,13 @@
+{
+  "domain": "pac_piscine",
+  "name": "PAC Piscine (EW11 / Modbus)",
+  "version": "1.0.0",
+  "documentation": "https://github.com/your/pac-piscine-ha",
+  "issue_tracker": "https://github.com/your/pac-piscine-ha/issues",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": [],
+  "iot_class": "local_push",
+  "integration_type": "device",
+  "config_flow": true
+}
