@@ -39,9 +39,15 @@ class PacCoordinator(DataUpdateCoordinator):
             writer = None
             try:
                 _LOGGER.debug("Connexion a l'EW11 %s:%s", self._host, self._port)
-                reader, writer = await asyncio.open_connection(self._host, self._port)
+                reader, writer = await asyncio.wait_for(
+                    asyncio.open_connection(self._host, self._port), timeout=10
+                )
                 while True:
-                    data = await reader.read(4096)
+                    # Garde-fou anti-zombie : la PAC pousse ~toutes les 6s. Si on ne
+                    # recoit RIEN pendant 30s, le lien est mort (EW11 redemarre, blip
+                    # WiFi, FIN/RST perdu) -> on leve une exception pour forcer la
+                    # reconnexion au lieu de rester bloque indefiniment sur read().
+                    data = await asyncio.wait_for(reader.read(4096), timeout=30)
                     if not data:
                         raise ConnectionError("EW11 a ferme la connexion")
                     updates = self._decoder.feed(data)
